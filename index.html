@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Expense Tracker App</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#get-started" onclick="showSection('get-started')" id="get-started-link">Get Started</a></li>
+                <li><a href="#add-expense" onclick="checkLogin('add-expense')">Add Expense</a></li>
+                <li><a href="#expenses" onclick="checkLogin('expenses')">Expenses</a></li>
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="#" id="logout-btn" class="hidden" onclick="handleLogout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="visible">
+        <h1>Welcome to the Expense Tracker App</h1>
+        <p>Managing your finances has never been easier...</p>
+        <h2>Key Features:</h2>
+        <ul>
+            <li><strong>Track Expenses & Income:</strong> Easily log your expenses and income to get a clear picture of where your money is going.</li>
+            <li><strong>Set Financial Goals:</strong> Establish savings goals and monitor your progress to stay motivated and financially responsible.</li>
+            <li><strong>Expense Categories:</strong> Organize your expenses by category for better insights into your spending habits.</li>
+            <li><strong>Real-Time Data & Reports:</strong> Access your financial data anytime with intuitive charts and reports to help make informed decisions.</li>
+            <li><strong>Secure & Private:</strong> Your financial information is securely stored, ensuring your privacy and peace of mind.</li>
+        </ul>
+    </section>
+    
+    <!-- Get Started Section -->
+    <section id="get-started" class="hidden">
+        <h1>Get Started</h1>
+        <div class="form-container">
+            <div class="form-section">
+                <h2>Register</h2>
+                <form id="register-form" onsubmit="handleRegister(event)">
+                    <label for="register-username">Username:</label>
+                    <input type="text" id="register-username" name="register-username" placeholder="Enter username" required>
+                    
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="register-email" placeholder="Enter email" required>
+                    
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" name="register-password" placeholder="Enter password" required>
+                    
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+
+            <div class="form-section">
+                <h2>Login</h2>
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="login-email" placeholder="Enter email" required>
+                    
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="login-password" placeholder="Enter password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Expense Section -->
+    <section id="add-expense" class="hidden">
+        <h1>Add Expense</h1>
+        <form id="add-expense-form" onsubmit="handleAddExpense(event)">
+            <div class="form-section">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter expense title" required>
+            </div>
+            <div class="form-section">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+            </div>
+            <div class="form-section">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Enter description"></textarea>
+            </div>
+            <div class="form-section">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">Add Expense</button>
+        </form>
+    </section>
+
+    <!-- View Expense Section -->
+    <section id="expenses" class="hidden">
+        <h1>Expenses</h1>
+        <div id="expenses-list">
+            <!-- Expense items will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="hidden">
+        <h1>About Us</h1>
+        <p>The Expense Tracker App helps you manage your personal finances efficiently by providing you with tools to track expenses, set goals, and gain insights into your spending habits.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="hidden">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out for any inquiries at support@expensetracker.com or call us at +1 234 567 890.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Expense Tracker App</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js" defer></script>
+</body>
+</html>
