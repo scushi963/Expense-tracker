@@ -1,0 +1,220 @@
+/* General notification style */
+.notification {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  width: 300px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Notification types */
+.notification.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.notification.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.notification.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Show the notification */
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide the notification (animation) */
+.notification.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* General styles */
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: rgb(235, 226, 219); /* Light background for better contrast */
+}
+
+header {
+  background-color: rgb(119, 53, 6); /* Slightly darker background color */
+  color: #fff;
+  padding: 20px 0; /* Increased padding for better spacing */
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px; /* Increased spacing between navigation items */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold; /* Added font weight for better visibility */
+}
+
+nav ul li a:hover {
+  text-decoration: underline; /* Underline on hover for better user feedback */
+}
+
+section {
+  padding: 30px; /* Increased padding for better content spacing */
+  background-color: #fff; /* White background for sections for contrast */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  margin: 20px auto; /* Centering the section with margin */
+  max-width: 90%; /* Adjust max-width for responsiveness */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  section {
+    padding: 20px;
+  }
+  .form-section {
+    margin-bottom: 15px;
+  }
+}
+
+h1, h2 {
+  color: #333; /* Darker text color for better readability */
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px; /* Added margin below heading */
+  font-size: 1.5em; /* Increased font size for headings */
+}
+
+/* Form styles */
+form {
+  max-width: 100%; /* Adjusted for better responsiveness */
+  margin: 0 auto; /* Center the form */
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9; /* Light background for forms */
+  padding: 20px; /* Added padding inside the form */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for form */
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold; /* Added font weight for better visibility */
+}
+
+input, select, textarea {
+  padding: 10px;
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners for form elements */
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+button {
+  background-color: #e0f17b;
+  color: #ce0909;
+  border: none;
+  padding: 10px 20px; /* Increased padding for better button size */
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px; /* Rounded corners for button */
+  font-size: 1em; /* Increased font size for better readability */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth hover effect */
+}
+
+button:hover {
+  background-color: #d1e1a7; /* Slightly darker color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+button:focus {
+  outline: 2px solid #007bff; /* Outline color matching the focus border for inputs */
+  outline-offset: 2px; /* Offset to avoid overlap with button text */
+}
+
+.visible {
+  display: block;
+}
+
+/* Hide elements by default */
+.hidden {
+  display: none;
+}
+
+/* Show elements */
+.show {
+  display: block;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: rgb(119, 53, 6); /* Same as header background */
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 20px; /* Space above the footer */
+}
+
+.expense-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.edit-expense-btn, .delete-expense-btn {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-expense-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-expense-btn {
+  background-color: #dc3545;
+  color: white;
+}
